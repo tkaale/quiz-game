@@ -15,9 +15,17 @@ for question in data.question_data:
     new_question = Question(question_text, question_answer)
     question_bank.append(new_question)
 
+quiz = quiz_brain.QuizBrain(question_bank)
 
-question = quiz_brain.QuizBrain(question_bank)
-question.next_question()
+while True:
+    quiz.next_question()
+    if quiz.still_has_questions() == True:
+        continue
+    else:
+        break
+
+
+
 
 # print(question_bank[1].answer)
 # print(question_bank[1].text)
