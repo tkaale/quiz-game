@@ -1,5 +1,5 @@
 import data
-import guiz_brain
+import quiz_brain
 
 
 class Question:
@@ -12,13 +12,13 @@ question_bank = []
 for question in data.question_data:
     question_text = question['text']
     question_answer = question['answer']
-    question_bank.append(Question(question_text, question_answer))
-
-print(question_bank)
-
-quiz = guiz_brain.QuizBrain(create_question_bank(data.question_data))
-quiz.next_question()
+    new_question = Question(question_text, question_answer)
+    question_bank.append(new_question)
 
 
+question = quiz_brain.QuizBrain(question_bank)
+question.next_question()
 
-#{'text': "A slug's blood is green.", 'answer': 'True'}
+# print(question_bank[1].answer)
+# print(question_bank[1].text)
+# {'text': "A slug's blood is green.", 'answer': 'True'}
