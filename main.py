@@ -1,4 +1,5 @@
 import data
+import guiz_brain
 
 
 class Question:
@@ -7,16 +8,17 @@ class Question:
         self.answer = q_answer
 
 
-def create_question_bank(question_data):
-    question_bank = []
-    for question in question_data:
-        question_text = question['text']
-        question_answer = question['answer']
-        question_bank.append(Question(question_text, question_answer))
-    return question_bank
+question_bank = []
+for question in data.question_data:
+    question_text = question['text']
+    question_answer = question['answer']
+    question_bank.append(Question(question_text, question_answer))
 
+print(question_bank)
 
-print(create_question_bank(data.question_data))
+quiz = guiz_brain.QuizBrain(create_question_bank(data.question_data))
+quiz.next_question()
+
 
 
 #{'text': "A slug's blood is green.", 'answer': 'True'}
