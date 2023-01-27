@@ -17,14 +17,5 @@ for question in data.question_data:
 
 
 quiz = quiz_brain.QuizBrain(question_bank)
-
-
 while quiz.still_has_questions():
     quiz.next_question()
-
-
-
-
-# print(question_bank[1].answer)
-# print(question_bank[1].text)
-# {'text': "A slug's blood is green.", 'answer': 'True'}
